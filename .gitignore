@@ -1,0 +1,12 @@
+*.*[#~]
+#.*?#
+upload.sh
+push.sh
+*.pyc
+dist/
+build/
+src/jNlp/*.p
+src/jNlp/_dicts/
+src/jNlp/classifiers/
+runsetup.py
+src/jNlp/_corpora

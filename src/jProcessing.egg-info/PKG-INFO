@@ -1,0 +1,103 @@
+Metadata-Version: 1.0
+Name: jProcessing
+Version: 0.1
+Summary: Japanese NLP Utilities
+Home-page: http://www.jaist.ac.jp/~s1010205
+Author: KATHURIA Pulkit
+Author-email: pulkit@jaist.ac.jp
+License: LICENSE.txt
+Description: Japanese NLP Library
+        ====================
+        :Date: 2012-01-16
+        :Version: 1
+        :Authors: pulkit[at]jaist.ac.jp
+        
+        .. contents::
+        
+        Requirements
+        ------------
+        
+        - Third Party Dependencies
+        
+        - Cabocha Japanese Morphological parser http://sourceforge.net/projects/cabocha/
+        
+        - Python Dependencies
+        
+        - ``Python 2.6.*`` or above
+        
+        
+        ``Links``
+        ---------
+        
+        - All code at jProcessing Repo GitHub_
+        
+        .. _GitHub: https://github.com/kevincobain2000/jProcessing
+        
+        - Documentation_ and HomePage_
+        
+        .. _Documentation: http://www.jaist.ac.jp/~s1010205/jnlp
+        
+        .. _HomePage: http://www.jaist.ac.jp/~s1010205/
+        
+        - PyPi_ Python Package
+        
+        .. _PyPi: http://pypi.python.org/pypi/jProcessing/0.1
+        
+        ::
+        
+        clone git@github.com:kevincobain2000/jProcessing.git
+        
+        
+        ``Install``
+        -----------
+        
+        In ``Terminal`` ::
+        
+        bash$ python setup.py install
+        
+        History
+        -------
+        
+        - ``0.1``
+        + Morphologically Tokenize Japanese Sentence
+        + Kanji / Hiragana / Katakana to Romaji Converter
+        + Edict Dictionary Search - borrowed
+        + Edict Examples Search - incomplete
+        + Sentence Similarity between two JP Sentences
+        + Run Cabocha (ISO-8859-1 configured) in Python.
+        + Longest Common String between Sentences
+        + Kanji to Katakana Pronunciation
+        + Hiragana, Katakana Chart Parser
+        
+        
+        Libraries and Modules
+        =====================
+        
+        - Documentation_
+        
+        .. _Documentation: http://www.jaist.ac.jp/~s1010205/jnlp
+        
+        
+        
+        Contacts
+        ========
+        
+        - ContactForm_
+        - BugReport_
+        - Contribute_
+        
+        .. _ContactForm: http://www.jaist.ac.jp/~s1010205/styled-2/index.html
+        .. _BugReport: http://www.jaist.ac.jp/~s1010205/styled/index.html
+        .. _Contribute: https://github.com/kevincobain2000/jProcessing
+        
+        :Author: `pulkit[at]jaist.ac.jp` [change ``at`` with ``@``]
+        
+        
+        
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Natural Language :: Japanese
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Programming Language :: Python :: 2.6
