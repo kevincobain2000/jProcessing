@@ -6,9 +6,6 @@ Japanese NLP Library
 .. sectnum::
 .. contents::
 
-:Version: 1
-:Authors: pulkit[at]jaist.ac.jp
-
 .. include::  chapters/requirements.rst
 .. include:: chapters/libraries.rst
 .. include:: chapters/edict.rst
