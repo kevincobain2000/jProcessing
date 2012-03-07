@@ -25,11 +25,13 @@ Requirements
 
 .. _GitHub: https://github.com/kevincobain2000/jProcessing
 
-- Documentation_ and HomePage_
+- Documentation_ and HomePage_ and Sphinx_
 
 .. _Documentation: http://www.jaist.ac.jp/~s1010205/jnlp
 
 .. _HomePage: http://www.jaist.ac.jp/~s1010205/
+
+.. _Sphinx: http://readthedocs.org/docs/jprocessing/en/latest/
 
 
 - PyPi_ Python Package
