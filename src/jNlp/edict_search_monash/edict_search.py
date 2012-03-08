@@ -306,7 +306,7 @@ class Parser(object):
         return results
   
 if __name__ == "__main__":
-    kp = Parser('data/edict-2011-08-30')
+    kp = Parser('_dicts/edict-2011-08-30')
     query = u'其の'
     for i, entry in enumerate(kp.search(query)):
         print entry.to_string().encode('utf-8')

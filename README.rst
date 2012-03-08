@@ -1,3 +1,5 @@
+`Back To Home <http://www.jaist.ac.jp/~s1010205/>`_
+
 ====================
 Japanese NLP Library
 ====================
