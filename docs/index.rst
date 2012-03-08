@@ -346,14 +346,6 @@ Japanese Word Polarity Score
 Contacts
 ========
 
-  - ContactForm_
-  - BugReport_
-  - Contribute_
-  
-  .. _ContactForm: http://www.jaist.ac.jp/~s1010205/styled-2/index.html
-  .. _BugReport: http://www.jaist.ac.jp/~s1010205/styled/index.html
-  .. _Contribute: https://github.com/kevincobain2000/jProcessing
-
   :Author: `pulkit[at]jaist.ac.jp` [change ``at`` with ``@``]
 
 
