@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 import os
 from setuptools import setup, find_packages
 def read(fname):
@@ -19,9 +21,9 @@ setup(
     description='Japanese NLP Utilities',
     long_description=open('README').read(),
     classifiers=['Development Status :: 2 - Pre-Alpha','Natural Language :: Japanese',
-                 'Topic :: Scientific/Engineering :: Artificial Intelligence',
-                 'Programming Language :: Python :: 2.6'],
-)
+                 'Topic :: Scientific/Engineering :: Artificial Intelligence'],
+                 
+    )
 
 """
 File System

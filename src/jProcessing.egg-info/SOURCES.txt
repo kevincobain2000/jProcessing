@@ -11,6 +11,7 @@ src/jNlp/jProcessing.py
 src/jNlp/jSentiments.py
 src/jNlp/jTokenize.py
 src/jNlp/summarize.py
+src/jNlp/url2text.py
 src/jNlp/aquisition/OpenSubtitles.py
 src/jNlp/aquisition/OpenSubtitles.pyc
 src/jNlp/aquisition/SubtitleDatabase.py
