@@ -349,5 +349,5 @@ Contacts
   :Author: `pulkit[at]jaist.ac.jp` [change ``at`` with ``@``]
 
 
-
+.. include:: disqus_jnlp.html.rst
 
