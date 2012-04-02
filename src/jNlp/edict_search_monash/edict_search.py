@@ -238,7 +238,6 @@ class EdictEntry(object):
         return unicode(self.__repr__())
   
 class Parser(object):
-  
     def __init__(self, filename, use_cache=True, encoding="EUC-JP"):
         if not os.path.exists(filename):
             raise Exception("Dictionary file does not exist.")
@@ -306,8 +305,8 @@ class Parser(object):
         return results
   
 if __name__ == "__main__":
-    kp = Parser('_dicts/edict-2011-08-30')
-    query = u'其の'
+    kp = Parser('../_dicts/edict-2011-08-30')
+    query = u'私'
     for i, entry in enumerate(kp.search(query)):
         print entry.to_string().encode('utf-8')
 

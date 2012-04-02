@@ -51,10 +51,21 @@ def jReads(target_sent):
     sentence = etree.fromstring(cabocha(target_sent).encode('utf-8'))
     jReadsToks = []
     for chunk in sentence:
-        for tok in chunk.findall('tok'):
+        for tok in chunk:
             if tok.get("read"): jReadsToks.append(tok.get("read"))
     return jReadsToks
-            
+
+def jInfo(target_sent, infotype='base'):
+    #return Info
+    #Eg for base form do
+    #>>>jInfo(target_sent, infotype='base')
+    #...returns [word1baseform, word2baseform, ..]
+    sentence = etree.fromstring(cabocha(target_sent).encode('utf-8'))
+    Info = []
+    for chunk in sentence:
+        for tok in chunk:
+            if tok.get(infotype): Info.append(tok.get(infotype))
+    return Info
 
 if __name__ == '__main__':
     """
@@ -66,10 +77,11 @@ if __name__ == '__main__':
     #print '--'.join(jReads(a)).encode('utf-8')
     #--------------------------------------------------------------#
     a = u'私は彼を５日*前*、つまりこの前の金曜日に駅で見かけた'
-    print jTokenize(a)
+    #print jTokenize(a)
     #input sentence has to be marked with target word otherwise target is not marked
-    print etree.tostring(jCabocha_with_target(a, 'nn:00:11'), 'utf-8')
-    print etree.tostring(jCabocha_with_target(a), 'utf-8') #default id = 'unknown'
+    #print etree.tostring(jCabocha_with_target(a, 'nn:00:11'), 'utf-8')
+    #print etree.tostring(jCabocha_with_target(a), 'utf-8') #default id = 'unknown'
 
     sent = u'日本最大級のポータルサイト'
+    print jInfo(sent, 'base')
     #print ' '.join(jReads(a)).encode('utf-8')

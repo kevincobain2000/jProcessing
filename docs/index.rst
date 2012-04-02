@@ -212,6 +212,30 @@ Uses MinHash by checking the overlap http://en.wikipedia.org/wiki/MinHash
 Edict Japanese Dictionary Search with Example sentences
 =======================================================
 
+Sample Ouput Demo
+-----------------
+
+.. raw:: html
+
+  <script language="JavaScript">
+  <!--
+  function autoResize(id){
+    var newheight;
+    var newwidth;
+
+    if(document.getElementById){
+        newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
+        newwidth=document.getElementById(id).contentWindow.document .body.scrollWidth;
+    }
+
+    document.getElementById(id).height= (newheight) + "px";
+    document.getElementById(id).width= (newwidth) + "px";
+  }
+  //-->
+  </script>
+  <IFRAME SRC="http://www.jaist.ac.jp/~s1010205/cgi-bin/edict_search_app/edict_search.cgi" width="120%" height="150px" id="iframe1" marginheight="0" frameborder="0" onLoad="autoResize('iframe1');"></iframe>
+
+
 Edict dictionary and example sentences parser.
 ----------------------------------------------
 

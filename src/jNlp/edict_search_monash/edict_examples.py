@@ -54,8 +54,7 @@ Outputs example sentences for a query in Japanese only for ambiguous words.
 """
 
 import re, os, subprocess
-from collections import defaultdict
-from jNlp.edict_search import Parser
+from jNlp.edict_search_monash.edict_search import Parser
 import cPickle as pickle
 
 
@@ -160,9 +159,9 @@ def _encoding_check(edict_path, edict_examples_path):
     return True
     
 if __name__ == '__main__':
-    query = u'出て'
-    edict_path = '_dicts/edict-2011-08-30'
-    edict_examples_path = '_dicts/edict_examples'
+    query = u'水'
+    edict_path = '../_dicts/edict-2011-08-30'
+    edict_examples_path = '../_dicts/edict_examples'
     search_with_example(edict_path, edict_examples_path, query)
     
     

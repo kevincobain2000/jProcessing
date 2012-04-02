@@ -2,6 +2,10 @@ MANIFEST.in
 README
 setup.py
 src/jNlp/__init__.py
+src/jNlp/callunix.py
+src/jNlp/callunix.py~
+src/jNlp/eProcessing.py
+src/jNlp/eProcessing.py~
 src/jNlp/jCabocha.py
 src/jNlp/jColor.py
 src/jNlp/jConvert.py
@@ -23,6 +27,9 @@ src/jNlp/data/__init__.py
 src/jNlp/data/chasen_pos.txt
 src/jNlp/data/hiraganaChart.txt
 src/jNlp/data/katakanaChart.txt
+src/jNlp/edict_search_monash/__init__.py
+src/jNlp/edict_search_monash/ambiguous_words.p
+src/jNlp/edict_search_monash/edict_examples.p
 src/jNlp/edict_search_monash/edict_examples.py
 src/jNlp/edict_search_monash/edict_search.py
 src/jProcessing.egg-info/PKG-INFO
