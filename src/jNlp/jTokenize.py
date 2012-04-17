@@ -2,10 +2,9 @@
 # -*- coding: utf-8 -*-
 import sys 
 import xml.etree.cElementTree as etree
-
 #Package imports
 from jNlp.jCabocha import *
-
+import argparse
 def add_target(jCabocha_tree,target_sent,**kwargs):
     """
     Following is to mark a target word
@@ -47,14 +46,6 @@ def jCabocha_with_target(target_sent, *args):
     sent_plain = etree.fromstring(cabocha(target_sent.replace('*', '')).encode('utf-8'))
     return add_target(sent_plain, target_sent, id = attach_id)
 
-def jReads(target_sent):
-    sentence = etree.fromstring(cabocha(target_sent).encode('utf-8'))
-    jReadsToks = []
-    for chunk in sentence:
-        for tok in chunk:
-            if tok.get("read"): jReadsToks.append(tok.get("read"))
-    return jReadsToks
-
 def jInfo(target_sent, infotype='base'):
     #return Info
     #Eg for base form do
@@ -67,9 +58,19 @@ def jInfo(target_sent, infotype='base'):
             if tok.get(infotype): Info.append(tok.get(infotype))
     return Info
 
+
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(add_help = True)
+    parser = argparse.ArgumentParser(description= 'No description sepecified')
+    parser.add_argument('-a', action="store", dest="action", type=unicode, help='-a base')
+    parser.add_argument('-s', action="store", dest="sentence", type=str, help='-s Sentence')
+    myarguments = parser.parse_args()
+    print cabocha(unicode(myarguments.sentence,'utf-8')).encode('utf-8')
+    
+
     """
     TO Mark the target word use * 1byte
+    """
     """
     a = u'私は彼を５日前、つまりこの前の金曜日に駅で見かけた'
     print jTokenize(a)
@@ -85,3 +86,4 @@ if __name__ == '__main__':
     sent = u'日本最大級のポータルサイト'
     print jInfo(sent, 'base')
     #print ' '.join(jReads(a)).encode('utf-8')
+    """

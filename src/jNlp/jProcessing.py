@@ -2,17 +2,9 @@
 # -*- coding: utf-8 -*-
 from jNlp.jTokenize import *
 from pkg_resources import resource_stream
-import sys, os, subprocess
+import sys, os, subprocess, re
 from subprocess import call
 import xml.etree.cElementTree as etree
-
-def grep(file_path, regexp):
-    if not os.path.exists(file_path+'.ary'):
-        subprocess.Popen(["mksary", file_path], stdout=subprocess.PIPE)
-    command = ['sary', regexp, file_path]
-    process = subprocess.Popen(command, stdout=subprocess.PIPE)
-    output = process.communicate()[0]
-    return output   
 
 def long_substr(str1, str2):
     data = [str1, str2]
@@ -45,6 +37,16 @@ class Similarities(object):
 class Property(object):
     def __init__(self):
         pass
+    def kanaChars(self):
+        Chars = []
+        tables = ['hiraganaChart.txt', 'katakanaChart.txt']
+        for table in tables:
+            buff = resource_stream('jNlp', 'data/%s'%table).readlines()
+            for line in buff:
+                line = unicode(line, 'utf-8')
+                Chars += line.split()
+        return Chars
+            
     def iscontent(self, pos):
         self.pos = pos
         self.file = resource_stream('jNlp', 'data/chasen_pos.txt').readlines()
@@ -65,6 +67,14 @@ class Property(object):
             for tok in chunk.getchildren():
                 if tok.get('target'):return tok
         return etree.fromstring(u'<tok></tok>')
+    def iskana(self, word):
+        romaji = ['a', 'b', 'c', 'd', 'e', 'f', 'g', \
+                  'h', 'i', 'j', 'k', 'l', 'm', 'n', \
+                  'o', 'p', 'q', 'r', 's', 't', 'u', \
+                  'v', 'w', 'x', 'y', 'z']
+        if len(word) == 1 and word in self.kanaChars() and word not in romaji:
+            return True
+        else: return False
         
         
 
@@ -78,8 +88,9 @@ if __name__ == '__main__':
     #similarity = Similarities()
     #print similarity.minhash(' '.join(jTokenize(a)), ' '.join(jTokenize(b)))
     pos = Property()
-    print pos.iscontent(u'地域')
-    print pos.tok_xml(u'これでアナタも冷え知らず', u'冷').get('pos')
+    #print pos.iscontent(u'地域')
+    #print pos.tok_xml(u'これでアナタも冷え知らず', u'冷').get('pos')
+    print pos.iskana(u'冷')
 
 
 

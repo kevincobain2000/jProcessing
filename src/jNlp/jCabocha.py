@@ -3,32 +3,22 @@
 import sys, subprocess, os
 from subprocess import call
 from tempfile import NamedTemporaryFile
-"""
-def cabocha_on_sparc(sent):
-    if os.path.exists('/home_lab_local/s1010205/tmp/'):
-        temp = NamedTemporaryFile(delete=False, dir='/home_lab_local/s1010205/tmp/')
-    else:
-        temp = NamedTemporaryFile(delete=False)
-    temp.write(sent.encode('eucjp'))
-    temp.close()
-    #subprocess.call(['scp',temp.name,'taal:~/tmp/'+temp.name.split('/')[-1]])
-    copy = ['scp',temp.name,'taal:~/tmp/'+temp.name.split('/')[-1]]
-    subprocess.Popen(copy, stdout=subprocess.PIPE).communicate()[0]
 
-    command = ['ssh','taal','cabocha', '-f','3 <', '~/tmp/'+temp.name.split('/')[-1]]
-    process = subprocess.Popen(command, stdout=subprocess.PIPE)
-    output = process.communicate()[0]
-    remove_remote_temp = ['ssh','taal','rm','~/tmp/'+temp.name.split('/')[-1]]
-    subprocess.Popen(remove_remote_temp, stdout=subprocess.PIPE).communicate()[0]
-    os.unlink(temp.name)
-    return unicode(output, 'eucjp')
-"""
+def formdamage(sent):
+    rectify = []
+    for ch in sent:
+        try: rectify.append(ch.encode('euc-jp'))
+        except: pass
+    return ''.join(rectify)
+        
 def cabocha(sent):
     if os.path.exists('/home_lab_local/s1010205/tmp/'):
         temp = NamedTemporaryFile(delete=False, dir='/home_lab_local/s1010205/tmp/')
     else:
         temp = NamedTemporaryFile(delete=False)
-    temp.write(sent.encode('eucjp'))
+    try: sent = sent.encode('euc-jp')
+    except: sent = formdamage(sent)
+    temp.write(sent)
     temp.close()
     command = ['cabocha', '-f','3 <', temp.name]
     process = subprocess.Popen(command, stdout=subprocess.PIPE)
@@ -40,8 +30,9 @@ def main():
     pass
 
 if __name__ == '__main__':
-    input_sentence = u'私は彼を５日前、つまりこの前の金曜日に駅で見かけた'
-    #print cabocha(input_sentence).encode('utf-8')
+    input_sentence = u'私が五年前にこの団体を仲間たちと結成したのはマルコス疑惑などで日本のＯＤＡ（政府開発援助）が問題になり、国まかせでなく、民間による国際協力が必要だと痛感したのが大きな理由です。'
+    print cabocha(input_sentence).encode('utf-8')
+
 
     
     

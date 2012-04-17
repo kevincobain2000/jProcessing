@@ -10,7 +10,7 @@ setup(
     author='KATHURIA Pulkit',
     author_email='pulkit@jaist.ac.jp',
     packages= find_packages('src'),
-    #scripts = ['scripts/*.*'],
+    scripts = ['scripts/vcabocha.py'],
     package_dir = {'':'src'},
     package_data = {'': ['data/*'],
     },
