@@ -4,7 +4,6 @@ setup.py
 scripts/
 scripts/vcabocha.py
 src/jNlp/__init__.py
-src/jNlp/_cabocha_script.py~
 src/jNlp/eProcessing.py
 src/jNlp/jCabocha.py
 src/jNlp/jCabocha.pyc
@@ -14,7 +13,6 @@ src/jNlp/jProcessing.py
 src/jNlp/jSentiments.py
 src/jNlp/jTokenize.py
 src/jNlp/vcabocha.py
-src/jNlp/vcabocha.py~
 src/jNlp/aquisition/OpenSubtitles.py
 src/jNlp/aquisition/OpenSubtitles.pyc
 src/jNlp/aquisition/SubtitleDatabase.py

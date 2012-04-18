@@ -11,6 +11,7 @@ if __name__ == '__main__':
     parser.add_argument('-s', action="store", dest="sentence", type=str, help='-s Sentence')
     myarguments = parser.parse_args()
     sent = unicode(myarguments.sentence,'utf-8')
+    print myarguments.action
     if myarguments.action == "cabocha":
         print cabocha(sent).encode('utf-8')
     elif myarguments.action == "tokenize":
@@ -20,7 +21,7 @@ if __name__ == '__main__':
     elif myarguments.action:
         tokenized = jTokenize(sent)
         info = jInfo(sent, infotype=myarguments.action)
-        mxlen = len(max(max(tokenized, key=len), max(info, key=len))) + 10
+        mxlen = len(max(max(tokenized, key=len), max(info, key=len))) + 30
         print '{0:{mx}}{1:}'.format('Sent',myarguments.action, mx = mxlen)
         print '{0:{mx}}{1:}'.format('====','='*len(myarguments.action), mx = mxlen)
         

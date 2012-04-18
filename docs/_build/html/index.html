@@ -119,8 +119,7 @@
 <div class="section" id="install">
 <h3><a class="toc-backref" href="#id5">1.1.2&nbsp;&nbsp;&nbsp;<tt class="docutils literal"><span class="pre">Install</span></tt></a><a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
 <p>In <tt class="docutils literal"><span class="pre">Terminal</span></tt></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;bash$ python setup.py install</span>
-</pre></div>
+<div class="highlight-python"><pre>bash$ python setup.py install</pre>
 </div>
 </div>
 <div class="section" id="history">
@@ -157,21 +156,20 @@
 <div class="section" id="tokenize-jtokenize-py">
 <h3><a class="toc-backref" href="#id8">1.2.1&nbsp;&nbsp;&nbsp;Tokenize <tt class="docutils literal"><span class="pre">jTokenize.py</span></tt></a><a class="headerlink" href="#tokenize-jtokenize-py" title="Permalink to this headline">¶</a></h3>
 <p>In <tt class="docutils literal"><span class="pre">Python</span></tt></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;from jNlp.jTokenize import jTokenize</span>
-<span class="go">&gt;&gt;&gt;input_sentence = u&#39;私は彼を５日前、つまりこの前の金曜日に駅で見かけた&#39;</span>
-<span class="go">&gt;&gt;&gt;list_of_tokens = jTokenize(input_sentence)</span>
-<span class="go">&gt;&gt;&gt;print list_of_tokens</span>
-<span class="go">&gt;&gt;&gt;print &#39;--&#39;.join(list_of_tokens).encode(&#39;utf-8&#39;)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">jNlp.jTokenize</span> <span class="kn">import</span> <span class="n">jTokenize</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">input_sentence</span> <span class="o">=</span> <span class="s">u&#39;私は彼を５日前、つまりこの前の金曜日に駅で見かけた&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_tokens</span> <span class="o">=</span> <span class="n">jTokenize</span><span class="p">(</span><span class="n">input_sentence</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">list_of_tokens</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="s">&#39;--&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">list_of_tokens</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Returns:</p>
-<div class="highlight-python"><pre>...[u'\u79c1', u'\u306f', u'\u5f7c', u'\u3092', u'\uff15'...]
-...私--は--彼--を--５--日--前--、--つまり--この--前--の--金曜日--に--駅--で--見かけ--た</pre>
+<div class="highlight-python"><pre>[u'\u79c1', u'\u306f', u'\u5f7c', u'\u3092', u'\uff15'...]
+私--は--彼--を--５--日--前--、--つまり--この--前--の--金曜日--に--駅--で--見かけ--た</pre>
 </div>
 <p>Katakana Pronunciation:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;print &#39;--&#39;.join(jReads(input_sentence)).encode(&#39;utf-8&#39;)</span>
-<span class="go">...ワタシ--ハ--カレ--ヲ--ゴ--ニチ--マエ--、--ツマリ--コノ--マエ--ノ--キンヨウビ--ニ--エキ--デ--ミカケ--タ</span>
-</pre></div>
+<div class="highlight-python"><pre>&gt;&gt;&gt; print '--'.join(jReads(input_sentence)).encode('utf-8')
+... ワタシ--ハ--カレ--ヲ--ゴ--ニチ--マエ--、--ツマリ--コノ--マエ--ノ--キンヨウビ--ニ--エキ--デ--ミカケ--タ</pre>
 </div>
 </div>
 <div class="section" id="cabocha-jcabocha-py">
@@ -180,40 +178,38 @@
 <ul class="simple">
 <li>If cobocha is configured as <tt class="docutils literal"><span class="pre">utf8</span></tt> then see this <a class="reference external" href="http://nltk.googlecode.com/svn/trunk/doc/book-jp/ch12.html#cabocha">http://nltk.googlecode.com/svn/trunk/doc/book-jp/ch12.html#cabocha</a></li>
 </ul>
-<p>In <tt class="docutils literal"><span class="pre">Python</span></tt></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;from jNlp.jCabocha import cabocha</span>
-<span class="go">&gt;&gt;&gt;print cabocha(input_sentence).encode(&#39;utf-8&#39;)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">jNlp.jCabocha</span> <span class="kn">import</span> <span class="n">cabocha</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">cabocha</span><span class="p">(</span><span class="n">input_sentence</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><pre>&lt;sentence&gt;
- &lt;chunk id="0" link="8" rel="D" score="0.971639" head="0" func="1"&gt;
-  &lt;tok id="0" read="ワタシ" base="私" pos="名詞-代名詞-一般" ctype="" cform="" ne="O"&gt;私&lt;/tok&gt;
-  &lt;tok id="1" read="ハ" base="は" pos="助詞-係助詞" ctype="" cform="" ne="O"&gt;は&lt;/tok&gt;
- &lt;/chunk&gt;
- &lt;chunk id="1" link="2" rel="D" score="0.488672" head="2" func="3"&gt;
-  &lt;tok id="2" read="カレ" base="彼" pos="名詞-代名詞-一般" ctype="" cform="" ne="O"&gt;彼&lt;/tok&gt;
-  &lt;tok id="3" read="ヲ" base="を" pos="助詞-格助詞-一般" ctype="" cform="" ne="O"&gt;を&lt;/tok&gt;
- &lt;/chunk&gt;
- &lt;chunk id="2" link="8" rel="D" score="2.25834" head="6" func="6"&gt;
-  &lt;tok id="4" read="ゴ" base="５" pos="名詞-数" ctype="" cform="" ne="B-DATE"&gt;５&lt;/tok&gt;
-  &lt;tok id="5" read="ニチ" base="日" pos="名詞-接尾-助数詞" ctype="" cform="" ne="I-DATE"&gt;日&lt;/tok&gt;
-  &lt;tok id="6" read="マエ" base="前" pos="名詞-副詞可能" ctype="" cform="" ne="I-DATE"&gt;前&lt;/tok&gt;
-  &lt;tok id="7" read="、" base="、" pos="記号-読点" ctype="" cform="" ne="O"&gt;、&lt;/tok&gt;
- &lt;/chunk&gt;</pre>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;sentence&gt;</span>
+ <span class="nt">&lt;chunk</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">link=</span><span class="s">&quot;8&quot;</span> <span class="na">rel=</span><span class="s">&quot;D&quot;</span> <span class="na">score=</span><span class="s">&quot;0.971639&quot;</span> <span class="na">head=</span><span class="s">&quot;0&quot;</span> <span class="na">func=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;tok</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span> <span class="na">read=</span><span class="s">&quot;ワタシ&quot;</span> <span class="na">base=</span><span class="s">&quot;私&quot;</span> <span class="na">pos=</span><span class="s">&quot;名詞-代名詞-一般&quot;</span> <span class="na">ctype=</span><span class="s">&quot;&quot;</span> <span class="na">cform=</span><span class="s">&quot;&quot;</span> <span class="na">ne=</span><span class="s">&quot;O&quot;</span><span class="nt">&gt;</span>私<span class="nt">&lt;/tok&gt;</span>
+  <span class="nt">&lt;tok</span> <span class="na">id=</span><span class="s">&quot;1&quot;</span> <span class="na">read=</span><span class="s">&quot;ハ&quot;</span> <span class="na">base=</span><span class="s">&quot;は&quot;</span> <span class="na">pos=</span><span class="s">&quot;助詞-係助詞&quot;</span> <span class="na">ctype=</span><span class="s">&quot;&quot;</span> <span class="na">cform=</span><span class="s">&quot;&quot;</span> <span class="na">ne=</span><span class="s">&quot;O&quot;</span><span class="nt">&gt;</span>は<span class="nt">&lt;/tok&gt;</span>
+ <span class="nt">&lt;/chunk&gt;</span>
+ <span class="nt">&lt;chunk</span> <span class="na">id=</span><span class="s">&quot;1&quot;</span> <span class="na">link=</span><span class="s">&quot;2&quot;</span> <span class="na">rel=</span><span class="s">&quot;D&quot;</span> <span class="na">score=</span><span class="s">&quot;0.488672&quot;</span> <span class="na">head=</span><span class="s">&quot;2&quot;</span> <span class="na">func=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;tok</span> <span class="na">id=</span><span class="s">&quot;2&quot;</span> <span class="na">read=</span><span class="s">&quot;カレ&quot;</span> <span class="na">base=</span><span class="s">&quot;彼&quot;</span> <span class="na">pos=</span><span class="s">&quot;名詞-代名詞-一般&quot;</span> <span class="na">ctype=</span><span class="s">&quot;&quot;</span> <span class="na">cform=</span><span class="s">&quot;&quot;</span> <span class="na">ne=</span><span class="s">&quot;O&quot;</span><span class="nt">&gt;</span>彼<span class="nt">&lt;/tok&gt;</span>
+  <span class="nt">&lt;tok</span> <span class="na">id=</span><span class="s">&quot;3&quot;</span> <span class="na">read=</span><span class="s">&quot;ヲ&quot;</span> <span class="na">base=</span><span class="s">&quot;を&quot;</span> <span class="na">pos=</span><span class="s">&quot;助詞-格助詞-一般&quot;</span> <span class="na">ctype=</span><span class="s">&quot;&quot;</span> <span class="na">cform=</span><span class="s">&quot;&quot;</span> <span class="na">ne=</span><span class="s">&quot;O&quot;</span><span class="nt">&gt;</span>を<span class="nt">&lt;/tok&gt;</span>
+ <span class="nt">&lt;/chunk&gt;</span>
+ <span class="nt">&lt;chunk</span> <span class="na">id=</span><span class="s">&quot;2&quot;</span> <span class="na">link=</span><span class="s">&quot;8&quot;</span> <span class="na">rel=</span><span class="s">&quot;D&quot;</span> <span class="na">score=</span><span class="s">&quot;2.25834&quot;</span> <span class="na">head=</span><span class="s">&quot;6&quot;</span> <span class="na">func=</span><span class="s">&quot;6&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;tok</span> <span class="na">id=</span><span class="s">&quot;4&quot;</span> <span class="na">read=</span><span class="s">&quot;ゴ&quot;</span> <span class="na">base=</span><span class="s">&quot;５&quot;</span> <span class="na">pos=</span><span class="s">&quot;名詞-数&quot;</span> <span class="na">ctype=</span><span class="s">&quot;&quot;</span> <span class="na">cform=</span><span class="s">&quot;&quot;</span> <span class="na">ne=</span><span class="s">&quot;B-DATE&quot;</span><span class="nt">&gt;</span>５<span class="nt">&lt;/tok&gt;</span>
+  <span class="nt">&lt;tok</span> <span class="na">id=</span><span class="s">&quot;5&quot;</span> <span class="na">read=</span><span class="s">&quot;ニチ&quot;</span> <span class="na">base=</span><span class="s">&quot;日&quot;</span> <span class="na">pos=</span><span class="s">&quot;名詞-接尾-助数詞&quot;</span> <span class="na">ctype=</span><span class="s">&quot;&quot;</span> <span class="na">cform=</span><span class="s">&quot;&quot;</span> <span class="na">ne=</span><span class="s">&quot;I-DATE&quot;</span><span class="nt">&gt;</span>日<span class="nt">&lt;/tok&gt;</span>
+  <span class="nt">&lt;tok</span> <span class="na">id=</span><span class="s">&quot;6&quot;</span> <span class="na">read=</span><span class="s">&quot;マエ&quot;</span> <span class="na">base=</span><span class="s">&quot;前&quot;</span> <span class="na">pos=</span><span class="s">&quot;名詞-副詞可能&quot;</span> <span class="na">ctype=</span><span class="s">&quot;&quot;</span> <span class="na">cform=</span><span class="s">&quot;&quot;</span> <span class="na">ne=</span><span class="s">&quot;I-DATE&quot;</span><span class="nt">&gt;</span>前<span class="nt">&lt;/tok&gt;</span>
+  <span class="nt">&lt;tok</span> <span class="na">id=</span><span class="s">&quot;7&quot;</span> <span class="na">read=</span><span class="s">&quot;、&quot;</span> <span class="na">base=</span><span class="s">&quot;、&quot;</span> <span class="na">pos=</span><span class="s">&quot;記号-読点&quot;</span> <span class="na">ctype=</span><span class="s">&quot;&quot;</span> <span class="na">cform=</span><span class="s">&quot;&quot;</span> <span class="na">ne=</span><span class="s">&quot;O&quot;</span><span class="nt">&gt;</span>、<span class="nt">&lt;/tok&gt;</span>
+ <span class="nt">&lt;/chunk&gt;</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="kanji-katakana-hiragana-to-tokenized-romaji-jconvert-py">
 <h3><a class="toc-backref" href="#id10">1.2.3&nbsp;&nbsp;&nbsp;Kanji / Katakana /Hiragana to Tokenized Romaji <tt class="docutils literal"><span class="pre">jConvert.py</span></tt></a><a class="headerlink" href="#kanji-katakana-hiragana-to-tokenized-romaji-jconvert-py" title="Permalink to this headline">¶</a></h3>
 <p>Uses <tt class="docutils literal"><span class="pre">data/katakanaChart.txt</span></tt> and parses the chart. See <a class="reference internal" href="#katakanachart">katakanaChart</a>.</p>
-<p>Usage</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;from jNlp.jConvert import *</span>
-<span class="go">&gt;&gt;&gt;input_sentence = u&#39;気象庁が２１日午前４時４８分、発表した天気概況によると、&#39;</span>
-<span class="go">&gt;&gt;&gt;print &#39; &#39;.join(tokenizedRomaji(input_sentence))</span>
-<span class="go">&gt;&gt;&gt;print tokenizedRomaji(input_sentence)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">jNlp.jConvert</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">input_sentence</span> <span class="o">=</span> <span class="s">u&#39;気象庁が２１日午前４時４８分、発表した天気概況によると、&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="s">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokenizedRomaji</span><span class="p">(</span><span class="n">input_sentence</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">tokenizedRomaji</span><span class="p">(</span><span class="n">input_sentence</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Output</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="o">...</span><span class="n">kisyoutyou</span> <span class="n">ga</span> <span class="n">ni</span> <span class="n">ichi</span> <span class="n">nichi</span> <span class="n">gozen</span> <span class="n">yon</span> <span class="n">ji</span> <span class="n">yon</span> <span class="n">hachi</span> <span class="n">hun</span>  <span class="n">hapyou</span> <span class="n">si</span> <span class="n">ta</span> <span class="n">tenki</span> <span class="n">gaikyou</span> <span class="n">ni</span> <span class="n">yoru</span> <span class="n">to</span>
 <span class="o">...</span><span class="p">[</span><span class="s">u&#39;kisyoutyou&#39;</span><span class="p">,</span> <span class="s">u&#39;ga&#39;</span><span class="p">,</span> <span class="s">u&#39;ni&#39;</span><span class="p">,</span> <span class="s">u&#39;ichi&#39;</span><span class="p">,</span> <span class="s">u&#39;nichi&#39;</span><span class="p">,</span> <span class="s">u&#39;gozen&#39;</span><span class="p">,</span><span class="o">...</span><span class="p">]</span>
 </pre></div>

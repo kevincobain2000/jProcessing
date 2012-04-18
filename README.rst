@@ -50,7 +50,7 @@ Requirements
 
 In ``Terminal`` ::
 
-  >>>bash$ python setup.py install
+  bash$ python setup.py install
 
 History
 -------
@@ -77,25 +77,25 @@ Tokenize ``jTokenize.py``
 -------------------------
 In ``Python`` ::
 
-  >>>from jNlp.jTokenize import jTokenize
-  >>>input_sentence = u'私は彼を５日前、つまりこの前の金曜日に駅で見かけた'
-  >>>list_of_tokens = jTokenize(input_sentence)
-  >>>print list_of_tokens
-  >>>print '--'.join(list_of_tokens).encode('utf-8')
+  >>> from jNlp.jTokenize import jTokenize
+  >>> input_sentence = u'私は彼を５日前、つまりこの前の金曜日に駅で見かけた'
+  >>> list_of_tokens = jTokenize(input_sentence)
+  >>> print list_of_tokens
+  >>> print '--'.join(list_of_tokens).encode('utf-8')
 
 Returns: 
 
-::
+.. code-block:: python
 
-  ...[u'\u79c1', u'\u306f', u'\u5f7c', u'\u3092', u'\uff15'...]
-  ...私--は--彼--を--５--日--前--、--つまり--この--前--の--金曜日--に--駅--で--見かけ--た
+  [u'\u79c1', u'\u306f', u'\u5f7c', u'\u3092', u'\uff15'...]
+  私--は--彼--を--５--日--前--、--つまり--この--前--の--金曜日--に--駅--で--見かけ--た
 
 Katakana Pronunciation:
 
-::
+.. code-block:: python
 
-  >>>print '--'.join(jReads(input_sentence)).encode('utf-8')
-  ...ワタシ--ハ--カレ--ヲ--ゴ--ニチ--マエ--、--ツマリ--コノ--マエ--ノ--キンヨウビ--ニ--エキ--デ--ミカケ--タ
+  >>> print '--'.join(jReads(input_sentence)).encode('utf-8')
+  ... ワタシ--ハ--カレ--ヲ--ゴ--ニチ--マエ--、--ツマリ--コノ--マエ--ノ--キンヨウビ--ニ--エキ--デ--ミカケ--タ
 
 
 Cabocha ``jCabocha.py``
@@ -107,14 +107,14 @@ Run Cabocha_ with original ``EUCJP`` or ``IS0-8859-1`` configured encoding, with
 
 - If cobocha is configured as ``utf8`` then see this http://nltk.googlecode.com/svn/trunk/doc/book-jp/ch12.html#cabocha
 
-In ``Python`` ::
+.. code-block:: python
 
->>>from jNlp.jCabocha import cabocha
->>>print cabocha(input_sentence).encode('utf-8')
+  >>> from jNlp.jCabocha import cabocha
+  >>> print cabocha(input_sentence).encode('utf-8')
 
 Output:
 
-::
+.. code-block:: xml
 
   <sentence>
    <chunk id="0" link="8" rel="D" score="0.971639" head="0" func="1">
@@ -139,17 +139,17 @@ Kanji / Katakana /Hiragana to Tokenized Romaji ``jConvert.py``
 
 Uses ``data/katakanaChart.txt`` and parses the chart. See katakanaChart_.
 
-Usage ::
+.. code-block:: python
 
->>>from jNlp.jConvert import *
->>>input_sentence = u'気象庁が２１日午前４時４８分、発表した天気概況によると、'
->>>print ' '.join(tokenizedRomaji(input_sentence))
->>>print tokenizedRomaji(input_sentence)
+  >>> from jNlp.jConvert import *
+  >>> input_sentence = u'気象庁が２１日午前４時４８分、発表した天気概況によると、'
+  >>> print ' '.join(tokenizedRomaji(input_sentence))
+  >>> print tokenizedRomaji(input_sentence)
 
-Output ::
+.. code-block:: python
 
-...kisyoutyou ga ni ichi nichi gozen yon ji yon hachi hun  hapyou si ta tenki gaikyou ni yoru to
-...[u'kisyoutyou', u'ga', u'ni', u'ichi', u'nichi', u'gozen',...]
+  ...kisyoutyou ga ni ichi nichi gozen yon ji yon hachi hun  hapyou si ta tenki gaikyou ni yoru to
+  ...[u'kisyoutyou', u'ga', u'ni', u'ichi', u'nichi', u'gozen',...]
 
  
 **katakanaChart.txt**
