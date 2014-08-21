@@ -38,6 +38,14 @@ def jTokenize(target_sent):
             else: jTokenized_sent.append(tok.text)
     return jTokenized_sent
 
+def jReads(target_sent):
+    sentence = etree.fromstring(cabocha(target_sent).encode('utf-8'))
+    jReadsToks = []
+    for chunk in sentence:
+        for tok in chunk.findall('tok'):
+            if tok.get("read"): jReadsToks.append(tok.get("read"))
+    return jReadsToks
+
 def jCabocha_with_target(target_sent, *args):
     #target_sent has to be marked with *
     if '*' not in target_sent: return cabocha(target_sent)
