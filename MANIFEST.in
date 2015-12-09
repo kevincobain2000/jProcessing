@@ -1,5 +1,5 @@
-graft src/
-prune src/jNlp/.git/
+graft src
+prune src/jNlp/.git
 exclude src/jNlp/jnlp/upload.sh
 exclude push.sh
 exclude src/jNlp/*.p
