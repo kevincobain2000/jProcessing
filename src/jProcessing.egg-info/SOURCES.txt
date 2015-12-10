@@ -1,7 +1,7 @@
 MANIFEST.in
 README
 setup.py
-scripts/
+scripts
 scripts/vcabocha.py
 src/jNlp/__init__.py
 src/jNlp/eProcessing.py
