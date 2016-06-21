@@ -43,8 +43,14 @@ def jReads(target_sent):
     jReadsToks = []
     for chunk in sentence:
         for tok in chunk.findall('tok'):
-            read_tag = tok.get("feature").split(',')[-2]
-            if read_tag != '*': jReadsToks.append(read_tag)
+            if tok.get("feature"):
+                read_tag = tok.get("feature").split(',')[-2]
+                if read_tag == '*': read_tag = ''
+            elif tok.get("read"):
+                read_tag = tok.get("read")
+            else:
+                pass
+            if read_tag: jReadsToks.append(read_tag)
     return jReadsToks
 
 def jCabocha_with_target(target_sent, *args):
@@ -75,6 +81,7 @@ if __name__ == '__main__':
     parser.add_argument('-s', action="store", dest="sentence", type=str, help='-s Sentence')
     myarguments = parser.parse_args()
     print cabocha(unicode(myarguments.sentence,'utf-8')).encode('utf-8')
+    print jReads(unicode(myarguments.sentence,'utf-8'))
 
     """
     TO Mark the target word use * 1byte
