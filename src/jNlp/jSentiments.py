@@ -45,6 +45,7 @@ class Sentiment(object):
         pScore = 0.0
         nScore = 0.0
         for sent in text.split(u'。'):
+            if len(sent.strip()) == 0: continue
             for word in jTokenize(sent):
                 if not self.idjWord.has_key(word): continue
                 pScore += self.idSenti[self.idjWord[word]][0]
