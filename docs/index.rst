@@ -113,7 +113,7 @@ Run Cabocha_ with original ``EUCJP`` or ``IS0-8859-1`` configured encoding, with
 
 .. _Cabocha: http://code.google.com/p/cabocha/
 
-- If cobocha is configured as ``utf8`` then see this http://nltk.googlecode.com/svn/trunk/doc/book-jp/ch12.html#cabocha
+- If cabocha is configured as ``utf8`` then see this http://nltk.googlecode.com/svn/trunk/doc/book-jp/ch12.html#cabocha
 
 .. code-block:: python
 
